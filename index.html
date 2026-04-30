@@ -1,276 +1,862 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yan&Dionatan - Apostas & Cassino</title>
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repasse de Franquia – Calzoon Canguçu/RS</title>
+    <meta name="description" content="Oportunidade única: repasse de franquia Calzoon em Canguçu/RS. Negócio pronto para faturar. Entre em contato agora.">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --red:    #E8161B;
+            --red2:   #c0100f;
+            --yellow: #FFC107;
+            --dark:   #0a0a0a;
+            --dark2:  #111111;
+            --card:   #181818;
+            --border: #2a2a2a;
+            --text:   #f0f0f0;
+            --muted:  #888;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; font-size: 15px; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .bebas { font-family: 'Bebas Neue', sans-serif; letter-spacing: 1.5px; line-height: 1.05; }
+
+        /* ===== TOPO URGÊNCIA ===== */
+        #top-bar {
+            background: var(--red);
+            text-align: center;
+            padding: 10px 1rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            animation: pulse-bar 2s infinite;
+        }
+        @keyframes pulse-bar {
+            0%,100% { background: var(--red); }
+            50%      { background: #ff2a2e; }
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10,10,10,0.97);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--yellow);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-logo span { color: white; }
+        .nav-cta {
+            background: var(--red);
+            color: white;
+            font-weight: 700;
+            font-size: 0.82rem;
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: background 0.2s, transform 0.2s;
+            white-space: nowrap;
+        }
+        .nav-cta:hover { background: #ff2a2e; transform: scale(1.04); }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            padding: 4rem 1.5rem;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 60% at 50% 40%, rgba(232,22,27,0.18) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 80% 80%, rgba(255,193,7,0.07) 0%, transparent 60%),
+                #0a0a0a;
+            z-index: 0;
+        }
+
+        /* Diagonal stripes sutis */
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(
+                -55deg,
+                transparent,
+                transparent 40px,
+                rgba(232,22,27,0.03) 40px,
+                rgba(232,22,27,0.03) 41px
+            );
+        }
+
+        .hero-content { position: relative; z-index: 1; max-width: 800px; }
+
+        .badge-repasse {
+            display: inline-block;
+            background: var(--yellow);
+            color: #000;
+            font-weight: 800;
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            padding: 6px 18px;
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100% { transform: translateY(0); }
+            50%      { transform: translateY(-4px); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 8vw, 6.5rem);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        .hero h1 .red { color: var(--red); }
+        .hero h1 .yellow { color: var(--yellow); }
+
+        .hero-sub {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: #ccc;
+            font-weight: 300;
+            max-width: 560px;
+            margin: 1rem auto 2.5rem;
+            line-height: 1.6;
+        }
+
+        /* PREÇO */
+        .price-block {
+            background: rgba(232,22,27,0.12);
+            border: 1px solid rgba(232,22,27,0.35);
+            border-radius: 12px;
+            display: inline-block;
+            padding: 1.4rem 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .price-label { font-size: 0.85rem; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+        .price-value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 10vw, 5.5rem);
+            color: var(--yellow);
+            line-height: 1;
+            text-shadow: 0 0 30px rgba(255,193,7,0.4);
+            letter-spacing: 2px;
+        }
+        .price-note { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+
+        /* BTN HERO */
+        .btn-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--red);
+            color: white;
+            font-weight: 800;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
+            padding: 1.1rem 2.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 0 30px rgba(232,22,27,0.35);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn-hero:hover {
+            background: #ff2a2e;
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(232,22,27,0.55);
+        }
+        .btn-hero i { font-size: 1.3rem; }
+
+        .hero-trust {
+            margin-top: 1.5rem;
+            font-size: 0.78rem;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .hero-trust span { display: flex; align-items: center; gap: 5px; }
+        .hero-trust i { color: var(--yellow); }
+
+        /* ===== FOTOS DA LOJA ===== */
+        .section { padding: 5rem 1.5rem; }
+        .section-title {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .section-title h2 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        .section-sub { text-align: center; color: var(--muted); margin-bottom: 3rem; font-size: 0.95rem; }
+
+        .underline-red {
+            display: inline-block;
+            border-bottom: 3px solid var(--red);
+            padding-bottom: 4px;
+        }
+
+        /* Fotos grid */
+        .fotos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .foto-card {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            aspect-ratio: 4/3;
+            background: var(--card);
+            position: relative;
+        }
+        .foto-card img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+        .foto-card:hover img { transform: scale(1.04); }
+
+        /* Placeholder vídeo */
+        .video-placeholder {
+            background: var(--card);
+            border: 2px dashed var(--border);
+            border-radius: 10px;
+            aspect-ratio: 16/9;
+            max-width: 700px;
+            margin: 2rem auto 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            color: var(--muted);
+        }
+        .video-placeholder i { font-size: 3rem; color: var(--red); opacity: 0.6; }
+        .video-placeholder p { font-size: 0.85rem; }
+
+        /* ===== BENEFÍCIOS ===== */
+        .bg-dark2 { background: var(--dark2); }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .benefit-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.8rem 1.5rem;
+            text-align: center;
+            transition: border-color 0.3s, transform 0.3s;
+        }
+        .benefit-card:hover { border-color: var(--red); transform: translateY(-4px); }
+        .benefit-icon {
+            width: 56px; height: 56px;
+            border-radius: 50%;
+            background: rgba(232,22,27,0.12);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.4rem;
+            color: var(--yellow);
+        }
+        .benefit-card h3 { font-size: 1.1rem; font-family: 'Poppins', sans-serif; font-weight: 700; margin-bottom: 0.4rem; }
+        .benefit-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+
+        /* ===== NÚMEROS ===== */
+        .numeros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1.5rem;
+            max-width: 750px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .numero-item { padding: 1.5rem 1rem; }
+        .numero-val {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            color: var(--yellow);
+            line-height: 1;
+            text-shadow: 0 0 20px rgba(255,193,7,0.3);
+        }
+        .numero-label { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+
+        /* ===== O QUE ESTÁ INCLUÍDO ===== */
+        .incluso-list {
+            max-width: 650px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+        .incluso-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.1rem 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: border-color 0.3s;
+        }
+        .incluso-item:hover { border-color: var(--yellow); }
+        .incluso-check {
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            background: var(--red);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+        .incluso-item p { font-size: 0.9rem; line-height: 1.4; }
+        .incluso-item strong { color: white; display: block; font-size: 0.95rem; }
+        .incluso-item span { color: var(--muted); font-size: 0.8rem; }
+
+        /* ===== LOCALIZAÇÃO ===== */
+        .localizacao-box {
+            max-width: 650px;
+            margin: 0 auto;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .loc-top {
+            background: var(--red);
+            padding: 1.2rem 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .loc-top i { font-size: 1.5rem; }
+        .loc-top h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 1px; }
+        .loc-body { padding: 1.8rem; }
+        .loc-body p { color: #ccc; line-height: 1.8; font-size: 0.95rem; }
+        .loc-body strong { color: var(--yellow); }
+
+        /* Map placeholder */
+        .map-placeholder {
+            background: #1a1a1a;
+            border: 1px dashed var(--border);
+            border-radius: 8px;
+            height: 200px;
+            display: flex; align-items: center; justify-content: center;
+            flex-direction: column;
+            gap: 8px;
+            color: var(--muted);
+            margin-top: 1rem;
+            font-size: 0.82rem;
+        }
+        .map-placeholder i { font-size: 2rem; color: var(--red); opacity: 0.5; }
+
+        /* ===== FAQ ===== */
+        .faq-wrap { max-width: 650px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid var(--border); }
+        .faq-btn {
+            width: 100%; text-align: left;
+            background: none; border: none;
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 1.2rem 0;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+        }
+        .faq-icon { color: var(--red); font-size: 1.1rem; flex-shrink: 0; transition: transform 0.3s; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-answer {
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s;
+            color: var(--muted); font-size: 0.88rem; line-height: 1.8; padding-bottom: 0;
+        }
+        .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.2rem; }
+
+        /* ===== CTA FINAL ===== */
+        .cta-final {
+            background:
+                radial-gradient(ellipse 80% 60% at 50% 50%, rgba(232,22,27,0.18) 0%, transparent 70%),
+                var(--dark2);
+            padding: 6rem 1.5rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+        .cta-final h2 { font-size: clamp(2.5rem, 7vw, 5rem); margin-bottom: 0.5rem; }
+        .cta-final p { color: #aaa; max-width: 500px; margin: 0.8rem auto 2rem; line-height: 1.7; }
+
+        .btn-wpp {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #25D366;
+            color: white;
+            font-weight: 800;
+            font-size: 1.15rem;
+            padding: 1.1rem 2.8rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 0 30px rgba(37,211,102,0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .btn-wpp:hover {
+            background: #20c05c;
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(37,211,102,0.5);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid var(--red);
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            padding: 1rem 2.4rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+        .btn-secondary:hover { background: var(--red); }
+
+        .cta-btns { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 1.5rem; }
+
+        .garantias {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;
+            margin-top: 2rem; font-size: 0.8rem; color: var(--muted);
+        }
+        .garantias span { display: flex; align-items: center; gap: 6px; }
+        .garantias i { color: var(--yellow); }
+
+        /* ===== STICKY ===== */
+        #sticky {
+            position: fixed; bottom: 0; left: 0; right: 0;
+            z-index: 200;
+            background: rgba(10,10,10,0.97);
+            border-top: 1px solid var(--red);
+            padding: 0.8rem 1.5rem;
+            display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.4s;
+        }
+        #sticky.visible { transform: translateY(0); }
+        .sticky-left p:first-child { font-weight: 700; font-size: 0.9rem; }
+        .sticky-left p:last-child { font-size: 0.75rem; color: var(--muted); }
+        .sticky-price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            color: var(--yellow);
+            white-space: nowrap;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            padding: 2rem 1.5rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--muted);
+        }
+
+        /* ===== DIVIDER ===== */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border), transparent);
+            margin: 0 1.5rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            .nav-logo { font-size: 1.5rem; }
+            .price-block { padding: 1rem 1.5rem; }
+            .sticky-left { display: none; }
+        }
+    </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav>
-  <div class="logo">YAN<span>DIONATAN</span></div>
-  <div class="nav-link active">
-  <img src="caminho/para/seu/icone-home.png" alt="Início" class="nav-icon-img">
-  <span>Início</span>
-</div>
-      <span>Início</span>
+    <!-- TOP BAR -->
+    <div id="top-bar">
+        🔥 OPORTUNIDADE ÚNICA · REPASSE DE FRANQUIA · NEGÓCIO 100% EM FUNCIONAMENTO
     </div>
-    <div class="nav-link">
-      <span class="icon">⚽</span>
-      <span>Esportes</span>
-    </div>
-    <div class="nav-link">
-      <span class="icon">📺</span>
-      <span>Ao Vivo</span>
-    </div>
-    <div class="nav-link">
-      <span class="icon">🎰</span>
-      <span>Cassino</span>
-    </div>
-    <div class="nav-link">
-      <span class="icon">🃏</span>
-      <span>Cassino Ao Vivo</span>
-    </div>
-  </div>
-  <div class="nav-actions">
-    <span class="pix-badge">PIX</span>
-    <button class="btn-login">Entrar</button>
-    <button class="btn-register">Registrar</button>
-  </div>
-</nav>
 
-<!-- MAIN LAYOUT -->
-<div class="main-layout">
-
-  <!-- LEFT SIDEBAR -->
-  <div class="sidebar">
-    <div class="search-box">
-      <span>🔍</span>
-      <input type="text" placeholder="Buscar jogo...">
-    </div>
-    <div class="tab-btns">
-      <button class="tab-btn active">Pré-Jogo</button>
-      <button class="tab-btn">Ao Vivo</button>
-    </div>
-    <div class="sidebar-section">Menu Rápido</div>
-    <div class="sidebar-card">
-      <div class="sidebar-card-item"><span class="sicon">🎁</span><span>Prêmio Diário</span></div>
-      <div class="sidebar-card-item"><span class="sicon">🎯</span><span>Missões</span></div>
-      <div class="sidebar-card-item"><span class="sicon">🏆</span><span>Torneios</span></div>
-      <div class="sidebar-card-item"><span class="sicon">🛒</span><span>Loja</span></div>
-    </div>
-    <div class="sidebar-section">Esportes</div>
-    <div class="sidebar-card">
-      <div class="sidebar-card-item muted"><span class="sicon">⚽</span><span>Futebol</span></div>
-      <div class="sidebar-card-item muted"><span class="sicon">🏀</span><span>Basquete</span></div>
-      <div class="sidebar-card-item muted"><span class="sicon">🎾</span><span>Tênis</span></div>
-      <div class="sidebar-card-item muted"><span class="sicon">🏈</span><span>Futebol Americano</span></div>
-      <div class="sidebar-card-item muted"><span class="sicon">🥊</span><span>MMA / Boxe</span></div>
-    </div>
-  </div>
-
-  <!-- MAIN CONTENT -->
-  <div class="main-content">
-
-    <!-- TICKER -->
-    <div class="ticker">
-      <span class="ticker-label">🔴 AO VIVO</span>
-      <div class="ticker-scroll">
-        <div class="ticker-items">
-          <span class="ticker-item">🏆 Carlos sacou <span>R$ 2.500</span></span>
-          <span class="ticker-item">🎰 Ana ganhou <span>R$ 1.200</span> no Fortune Tiger</span>
-          <span class="ticker-item">⚽ Bruno apostou e ganhou <span>R$ 3.000</span></span>
-          <span class="ticker-item">🎯 Fernanda venceu <span>R$ 950</span> no Aviator</span>
-          <span class="ticker-item">🏆 João recebeu <span>R$ 1.800</span></span>
-          <span class="ticker-item">🏆 Carlos sacou <span>R$ 2.500</span></span>
-          <span class="ticker-item">🎰 Ana ganhou <span>R$ 1.200</span> no Fortune Tiger</span>
-          <span class="ticker-item">⚽ Bruno apostou e ganhou <span>R$ 3.000</span></span>
-          <span class="ticker-item">🎯 Fernanda venceu <span>R$ 950</span> no Aviator</span>
-          <span class="ticker-item">🏆 João recebeu <span>R$ 1.800</span></span>
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">
+            🟡 <span>Calzoon</span>
         </div>
-      </div>
+        <a href="https://wa.me/5553981106771?text=Olá!%20Vi%20o%20anúncio%20do%20repasse%20da%20Calzoon%20em%20Canguçu%20e%20tenho%20interesse." class="nav-cta" target="_blank">
+            <i class="fab fa-whatsapp"></i> FALAR AGORA
+        </a>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content fade-in">
+            <div class="badge-repasse">⚡ REPASSE DE FRANQUIA · CANGUÇU/RS</div>
+
+            <h1>
+                NEGÓCIO <span class="red">PRONTO</span><br>
+                PARA <span class="yellow">FATURAR</span>
+            </h1>
+
+            <p class="hero-sub">
+                Franquia <strong>Calzoon</strong> em pleno funcionamento — estrutura completa, equipe treinada, marca consolidada. Você assume e já começa a lucrar.
+            </p>
+
+            <div class="price-block">
+                <p class="price-label">Valor do repasse</p>
+                <p class="price-value">R$ 250.000</p>
+                <p class="price-note">Negócio em funcionamento · Negociação direta com o proprietário</p>
+            </div>
+
+            <br>
+
+            <a href="https://wa.me/5553981106771?text=Olá!%20Vi%20o%20anúncio%20do%20repasse%20da%20Calzoon%20em%20Canguçu%20e%20tenho%20interesse." class="btn-hero" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                QUERO SABER MAIS
+            </a>
+
+            <div class="hero-trust">
+                <span><i class="fas fa-check-circle"></i> Loja em funcionamento</span>
+                <span><i class="fas fa-check-circle"></i> Marca nacional</span>
+                <span><i class="fas fa-check-circle"></i> Estrutura completa</span>
+                <span><i class="fas fa-check-circle"></i> Negociação direta</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOTOS DA LOJA ===== -->
+    <section class="section bg-dark2">
+        <div class="section-title">
+            <h2><span class="underline-red">A LOJA</span></h2>
+        </div>
+        <p class="section-sub">Veja a estrutura que você vai assumir — tudo montado e funcionando.</p>
+
+        <div class="fotos-grid">
+            <div class="foto-card">
+                <img src="https://guiafranquiasdesucesso.com/wp-content/uploads/2020/05/franquia-calzoon.jpg" 
+                     onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#555;font-size:0.8rem;\'><i class=\'fas fa-image\' style=\'font-size:2.5rem;color:#E8161B;opacity:0.4\'></i><p>Foto da loja</p></div>'"
+                     alt="Calzoon - Fachada">
+            </div>
+            <div class="foto-card">
+                <img src="https://d9hhrg4mnvzow.cloudfront.net/www.amelhorfranquia.com.br/calzoon/1e71dbe6-sorriso-centro-1_107t07t07t07s000000000.jpg"
+                     onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#555;font-size:0.8rem;\'><i class=\'fas fa-image\' style=\'font-size:2.5rem;color:#E8161B;opacity:0.4\'></i><p>Foto interior</p></div>'"
+                     alt="Calzoon - Interior">
+            </div>
+            <div class="foto-card">
+                <img src="https://www.abcdacomunicacao.com.br/wp-content/uploads/Nova-Loja-750x375.jpg"
+                     onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:#555;font-size:0.8rem;\'><i class=\'fas fa-image\' style=\'font-size:2.5rem;color:#E8161B;opacity:0.4\'></i><p>Foto noturna</p></div>'"
+                     alt="Calzoon - Noturna">
+            </div>
+        </div>
+
+        <!-- Placeholder vídeo -->
+        <div class="video-placeholder" style="max-width:700px;margin:2rem auto 0;">
+            <i class="fas fa-play-circle"></i>
+            <p style="font-weight:700;color:#ccc;">Vídeo da loja em funcionamento</p>
+            <p>📲 Solicite pelo WhatsApp para receber o vídeo completo</p>
+        </div>
+    </section>
+
+    <!-- ===== NÚMEROS ===== -->
+    <div class="divider"></div>
+    <section class="section">
+        <div class="section-title">
+            <h2><span class="underline-red">POR QUE A CALZOON?</span></h2>
+        </div>
+        <p class="section-sub">Uma marca que já provou que funciona no mercado brasileiro.</p>
+
+        <div class="numeros-grid">
+            <div class="numero-item">
+                <div class="numero-val">+10</div>
+                <div class="numero-label">Anos de mercado</div>
+            </div>
+            <div class="numero-item">
+                <div class="numero-val">100+</div>
+                <div class="numero-label">Unidades no Brasil</div>
+            </div>
+            <div class="numero-item">
+                <div class="numero-val">2x</div>
+                <div class="numero-label">Prêmios nacionais de franquia</div>
+            </div>
+            <div class="numero-item">
+                <div class="numero-val">★ 4.8</div>
+                <div class="numero-label">Avaliação média nas unidades</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BENEFÍCIOS ===== -->
+    <div class="divider"></div>
+    <section class="section bg-dark2">
+        <div class="section-title">
+            <h2><span class="underline-red">O QUE VOCÊ LEVA</span></h2>
+        </div>
+        <p class="section-sub">Com esse repasse, você não começa do zero. Você começa do lucro.</p>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-store"></i></div>
+                <h3>Unidade em Funcionamento</h3>
+                <p>A loja já está operando, com clientes, fluxo de caixa e rotina estabelecida. Você assume e mantém.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h3>Excelente Localização</h3>
+                <p>Ponto estratégico em Canguçu/RS com alto fluxo de pessoas e visibilidade garantida para a marca.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-tag"></i></div>
+                <h3>Marca Consolidada</h3>
+                <p>Calzoon é reconhecida nacionalmente. Você vende com o poder de uma marca que o cliente já conhece e confia.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-tools"></i></div>
+                <h3>Estrutura Completa</h3>
+                <p>Equipamentos, mobiliário, decoração e toda a infraestrutura da loja estão incluídos no repasse.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Baixo Custo Operacional</h3>
+                <p>Modelo de negócio enxuto, produto simples e com boa margem. Fácil de operar e escalar.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>Suporte da Franqueadora</h3>
+                <p>Treinamento, manual operacional e suporte contínuo da rede Calzoon para garantir seu sucesso.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== O QUE ESTÁ INCLUÍDO ===== -->
+    <div class="divider"></div>
+    <section class="section">
+        <div class="section-title">
+            <h2><span class="underline-red">TUDO INCLUÍDO NO REPASSE</span></h2>
+        </div>
+        <p class="section-sub">Você assume tudo. Sem surpresas, sem custo extra.</p>
+
+        <div class="incluso-list">
+            <div class="incluso-item">
+                <div class="incluso-check"><i class="fas fa-check" style="color:white;font-size:0.8rem;"></i></div>
+                <p><strong>Ponto comercial com contrato ativo</strong><span>Localização já estabelecida, contrato transferível ao novo franqueado</span></p>
+            </div>
+            <div class="incluso-item">
+                <div class="incluso-check"><i class="fas fa-check" style="color:white;font-size:0.8rem;"></i></div>
+                <p><strong>Todos os equipamentos e utensílios</strong><span>Tudo que está na loja hoje passa para o comprador</span></p>
+            </div>
+            <div class="incluso-item">
+                <div class="incluso-check"><i class="fas fa-check" style="color:white;font-size:0.8rem;"></i></div>
+                <p><strong>Móveis, decoração e fachada</strong><span>Identidade visual da Calzoon completa e instalada</span></p>
+            </div>
+            <div class="incluso-item">
+                <div class="incluso-check"><i class="fas fa-check" style="color:white;font-size:0.8rem;"></i></div>
+                <p><strong>Direito de uso da marca Calzoon</strong><span>Transferência do contrato de franquia junto à franqueadora</span></p>
+            </div>
+            <div class="incluso-item">
+                <div class="incluso-check"><i class="fas fa-check" style="color:white;font-size:0.8rem;"></i></div>
+                <p><strong>Carteira de clientes ativa</strong><span>Loja já possui clientes recorrentes e fluxo estabelecido</span></p>
+            </div>
+            <div class="incluso-item">
+                <div class="incluso-check"><i class="fas fa-check" style="color:white;font-size:0.8rem;"></i></div>
+                <p><strong>Período de transição com o atual proprietário</strong><span>Passagem completa da operação para garantir continuidade</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LOCALIZAÇÃO ===== -->
+    <div class="divider"></div>
+    <section class="section bg-dark2">
+        <div class="section-title">
+            <h2><span class="underline-red">LOCALIZAÇÃO</span></h2>
+        </div>
+        <p class="section-sub">Um dos pontos mais movimentados da cidade.</p>
+
+        <div class="localizacao-box">
+            <div class="loc-top">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>CANGUÇU · RIO GRANDE DO SUL</h3>
+            </div>
+            <div class="loc-body">
+                <p>A unidade está localizada em <strong>Canguçu/RS</strong>, município com forte comércio regional e grande fluxo de consumidores. O ponto comercial foi estrategicamente escolhido pela franqueadora para garantir visibilidade e volume de vendas.</p>
+                <p style="margin-top:0.8rem;">📲 <strong>Entre em contato para receber o endereço exato e agendar uma visita à loja.</strong></p>
+                <div class="map-placeholder">
+                    <i class="fas fa-map"></i>
+                    <p>Solicite o endereço completo pelo WhatsApp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <div class="divider"></div>
+    <section class="section">
+        <div class="section-title">
+            <h2><span class="underline-red">DÚVIDAS FREQUENTES</span></h2>
+        </div>
+        <p class="section-sub">Respostas rápidas para as principais perguntas.</p>
+
+        <div class="faq-wrap">
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                    O que é um repasse de franquia?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    Um repasse é quando o franqueado atual vende sua unidade já em funcionamento para um novo comprador. Você adquire um negócio pronto — com estrutura, equipamentos, marca e clientes — sem precisar montar tudo do zero.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                    Preciso ter experiência com franquias?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    Não é obrigatório. A Calzoon oferece treinamento completo para novos franqueados e o atual proprietário fará a passagem da operação. O modelo é simples e voltado para facilitar a gestão mesmo para quem está começando.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                    O valor de R$ 250.000 é negociável?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    O proprietário está aberto a conversar. Entre em contato pelo WhatsApp, apresente seu interesse e discuta as condições diretamente — sem intermediários.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                    A franqueadora precisa aprovar o novo comprador?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    Sim. Todo repasse de franquia passa pela aprovação da franqueadora Calzoon, que avalia o perfil do novo franqueado conforme os critérios da rede. O processo é padrão e o atual proprietário te auxilia em cada etapa.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-btn" onclick="toggleFaq(this)">
+                    Posso visitar a loja antes de fechar?
+                    <i class="fas fa-plus faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    Com certeza. Agendar uma visita presencial é altamente recomendado. Entre em contato pelo WhatsApp e marque um horário para conhecer a operação pessoalmente.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="cta-final" id="contato">
+        <h2>PRONTO PARA <span style="color:var(--red)">ASSUMIR</span>?</h2>
+        <p>
+            Essa oportunidade não vai durar. Entre em contato agora, tire todas as dúvidas e agende sua visita à loja antes que outra pessoa feche o negócio.
+        </p>
+
+        <div class="cta-btns">
+            <a href="https://wa.me/5553981106771?text=Olá!%20Vi%20o%20anúncio%20do%20repasse%20da%20Calzoon%20em%20Canguçu%20e%20tenho%20interesse%20em%20saber%20mais." class="btn-wpp" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                CHAMAR NO WHATSAPP
+            </a>
+            <a href="tel:+5553981106771" class="btn-secondary">
+                <i class="fas fa-phone"></i>
+                (53) 98110-6771
+            </a>
+        </div>
+
+        <div class="garantias">
+            <span><i class="fas fa-clock"></i> Resposta rápida</span>
+            <span><i class="fas fa-handshake"></i> Negociação direta</span>
+            <span><i class="fas fa-shield-alt"></i> Sem intermediários</span>
+            <span><i class="fas fa-map-marker-alt"></i> Canguçu/RS</span>
+        </div>
+    </section>
+
+    <footer>
+        <p style="margin-bottom:4px;">🟡 <strong style="color:var(--yellow)">Calzoon</strong> · Repasse de Franquia · Canguçu/RS</p>
+        <p>Contato: (53) 98110-6771 · Negociação direta com o proprietário</p>
+        <p style="margin-top:8px;font-size:0.72rem;color:#444;">Esta página é de divulgação do repasse e não tem vínculo oficial com a rede Calzoon.</p>
+    </footer>
+
+    <!-- STICKY BAR -->
+    <div id="sticky">
+        <div class="sticky-left">
+            <p>🟡 Calzoon Canguçu · Repasse</p>
+            <p>Negócio em funcionamento · Contato direto</p>
+        </div>
+        <div class="sticky-price">R$ 250.000</div>
+        <a href="https://wa.me/5553981106771?text=Olá!%20Vi%20o%20anúncio%20do%20repasse%20da%20Calzoon%20em%20Canguçu%20e%20tenho%20interesse." class="btn-wpp" style="font-size:0.85rem;padding:0.7rem 1.4rem;" target="_blank">
+            <i class="fab fa-whatsapp"></i> FALAR AGORA
+        </a>
     </div>
 
-    <!-- HERO BANNER -->
-    <div class="hero-banner">
-      <div class="hero-text">
-        <div class="hero-tag">🔥 Oferta Especial</div>
-        <div class="hero-title">TORNEIO SLOT<br><span>MAIS DE R$ 300 MIL</span></div>
-        <div class="hero-sub">Em prêmios por mês • Participe agora!</div>
-      </div>
-      <button class="hero-cta">🎯 PARTICIPAR</button>
-    </div>
+    <script>
+        // FAQ
+        function toggleFaq(btn) {
+            const item = btn.closest('.faq-item');
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+            if (!isOpen) item.classList.add('open');
+        }
 
-    <!-- QUICK ICONS -->
-    <div class="quick-icons">
-      <div class="quick-icon"><span class="qi-icon">🎁</span><span class="qi-label">Prêmios Diários</span></div>
-      <div class="quick-icon"><span class="qi-icon">🧧</span><span class="qi-label">Baú</span></div>
-      <div class="quick-icon"><span class="qi-icon">🎰</span><span class="qi-label">Cassino</span></div>
-      <div class="quick-icon"><span class="qi-icon">🃏</span><span class="qi-label">Cassino Ao Vivo</span></div>
-      <div class="quick-icon"><span class="qi-icon">🎯</span><span class="qi-label">Missões</span></div>
-      <div class="quick-icon"><span class="qi-icon">✈️</span><span class="qi-label">Aviator</span></div>
-      <div class="quick-icon"><span class="qi-icon">🏆</span><span class="qi-label">Torneios</span></div>
-      <div class="quick-icon"><span class="qi-icon">💣</span><span class="qi-label">Mines</span></div>
-      <div class="quick-icon"><span class="qi-icon">🎉</span><span class="qi-label">Promoções</span></div>
-    </div>
+        // Sticky bar
+        const sticky = document.getElementById('sticky');
+        const hero = document.querySelector('.btn-hero');
+        const io = new IntersectionObserver(entries => {
+            sticky.classList.toggle('visible', !entries[0].isIntersecting);
+        }, { threshold: 0 });
+        io.observe(hero);
 
-    <div class="section-title">🎮 Top Jogos</div>
-<div class="games-grid">
-  <div class="game-card">
-    <div class="game-thumb t1">
-      <img src="https://assets.centraldasorte.com/front/CentralDaSorte-LOGO.png" alt="Fortune Tiger" class="game-img">
-    </div>
-    <div class="game-badge hot">HOT</div>
-    <div class="game-info">
-      <div class="game-name">Central da Sorte</div>
-      <div class="game-provider">canguçu</div>
-    </div>
-  </div>
-
-  <div class="game-card">
-    <div class="game-thumb t2">
-      <img src="https://vaivaibet.com/assets/img/logo.png" alt="Aviator" class="game-img">
-    </div>
-    <div class="game-badge">NOVO</div>
-    <div class="game-info">
-      <div class="game-name">vai vai dionatan</div>
-      <div class="game-provider">gay</div>
-    </div>
-  </div>
-
-  <div class="game-card">
-    <div class="game-thumb t3">
-      <img src="https://cassino.org/wp-content/uploads/2024/08/poster-mines.jpg" alt="Mines" class="game-img">
-    </div>
-    <div class="game-info">
-      <div class="game-name">Mines</div>
-      <div class="game-provider">Turbo Games</div>
-    </div>
-  </div>
-
-  <div class="game-card">
-    <div class="game-thumb t4">
-      <img src="https://www.skycitycasino.com/blog/wp-content/uploads/2020/10/Dragon-Tiger-Blog.jpg" alt="Dragon Tiger" class="game-img">
-    </div>
-    <div class="game-badge hot">HOT</div>
-    <div class="game-info">
-      <div class="game-name">Dragon Tiger</div>
-      <div class="game-provider">Evolution</div>
-    </div>
-  </div>
-
-  <div class="game-card">
-    <div class="game-thumb t5">
-      <img src="https://camo.githubusercontent.com/e9d2705aba3ae4dd20fc8eb4245580d2a82d566d3379bca391f32b8dde25d276/68747470733a2f2f696d672e726174696f6e616c63646e2e636f6d2f73746172737765622f70726f642f35313630375f302e6a7067" alt="Gates of Olympus" class="game-img">
-    </div>
-    <div class="game-info">
-      <div class="game-name">Gates of Olympus</div>
-      <div class="game-provider">Pragmatic</div>
-    </div>
-  </div>
-
-  <div class="game-card">
-    <div class="game-thumb t6">
-      <img src="https://www.shutterstock.com/image-vector/luxury-golden-baccarat-logo-crown-600nw-2625957959.jpg" alt="Baccarat" class="game-img">
-    </div>
-    <div class="game-info">
-      <div class="game-name">Baccarat</div>
-      <div class="game-provider">Evolution</div>
-    </div>
-  </div>
-
-  <div class="game-card">
-    <div class="game-thumb t7">
-      <img src="https://t4.ftcdn.net/jpg/14/46/07/91/360_F_1446079199_1EzmEz3k3oHxPoBePgYhIMhuSuscuuw4.jpg" alt="Plinko" class="game-img">
-    </div>
-    <div class="game-badge">NOVO</div>
-    <div class="game-info">
-      <div class="game-name">Plinko</div>
-      <div class="game-provider">BGaming</div>
-    </div>
-  </div>
-
-  <div class="game-card">
-    <div class="game-thumb t8">
-      <img src="https://media.betmgm.bet.br/images/games/roleta-brasileira-ao-vivo/roleta-brasileira-ao-vivo-tile.jpg" alt="Roleta Ao Vivo" class="game-img">
-    </div>
-    <div class="game-info">
-      <div class="game-name">Roleta Ao Vivo</div>
-      <div class="game-provider">Pragmatic</div>
-    </div>
-  </div>
-</div>
-    <!-- PROMOÇÕES -->
-    <div class="section-title">🎁 Promoções</div>
-    <div class="promo-grid">
-      <div class="promo-card">
-        <div class="promo-icon">🎊</div>
-        <div class="promo-title">Bônus de Boas-Vindas</div>
-        <div class="promo-desc">Novos usuários recebem até R$888 ao completar o cadastro. Comece a jogar sem depositar!</div>
-        <button class="promo-cta">Resgatar Agora</button>
-      </div>
-      <div class="promo-card">
-        <div class="promo-icon">💰</div>
-        <div class="promo-title">100% de Cashback</div>
-        <div class="promo-desc">Deposite pela primeira vez e receba 100% de cashback. Aumente suas chances de ganhar!</div>
-        <button class="promo-cta">Depositar Agora</button>
-      </div>
-      <div class="promo-card">
-        <div class="promo-icon">🎡</div>
-        <div class="promo-title">Roda da Sorte</div>
-        <div class="promo-desc">Gire a roleta e ganhe prêmios surpresa! Disponível toda segunda-feira para todos os usuários.</div>
-        <button class="promo-cta">Girar Agora</button>
-      </div>
-      <div class="promo-card">
-        <div class="promo-icon">👑</div>
-        <div class="promo-title">Clube VIP</div>
-        <div class="promo-desc">Membros VIP recebem R$500 mensais de volta. Suba de nível e desfrute de benefícios premium!</div>
-        <button class="promo-cta">Saiba Mais</button>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- RIGHT SIDEBAR -->
-  <div class="right-sidebar">
-    <div class="section-title" style="font-size:14px; margin-bottom:12px;">⭐ Destaques</div>
-    <div class="highlight-card">
-      <div class="highlight-header">🎰 Cassino</div>
-      <div class="highlight-game">
-        <div class="highlight-thumb t1">🐯</div>
-        <div class="highlight-game-name">Fortune Tiger</div>
-        <div class="highlight-game-tag">PG Soft • Jackpot</div>
-      </div>
-      <div class="highlight-game">
-        <div class="highlight-thumb t2">🌊</div>
-        <div class="highlight-game-name">Floating Tiger</div>
-        <div class="highlight-game-tag">PG Soft • Novo</div>
-      </div>
-    </div>
-    <div class="highlight-card">
-      <div class="highlight-header">📂 Categorias</div>
-      <div class="highlight-game"><span>🎰</span><span class="cat-label">Casual</span></div>
-      <div class="highlight-game"><span>🃏</span><span class="cat-label">Mesa</span></div>
-      <div class="highlight-game"><span>🎯</span><span class="cat-label">Crash</span></div>
-      <div class="highlight-game"><span>📺</span><span class="cat-label">Ao Vivo</span></div>
-      <div class="highlight-game"><span>⚽</span><span class="cat-label">Esportes Virtuais</span></div>
-    </div>
-  </div>
-
-</div>
-
-<!-- FOOTER BAR -->
-<div class="responsible-bar">
-  <span>18+ Jogue com responsabilidade</span>
-  <span>•</span>
-  <span><strong>Autorizado pela SPA/MF</strong></span>
-  <span>•</span>
-  <span>Se deixar de ser diversão, pare.</span>
-</div>
-
-<script src="script.js"></script>
+        // Fade-in hero
+        document.querySelector('.hero-content').style.opacity = '0';
+        document.querySelector('.hero-content').style.transform = 'translateY(24px)';
+        setTimeout(() => {
+            document.querySelector('.hero-content').style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            document.querySelector('.hero-content').style.opacity = '1';
+            document.querySelector('.hero-content').style.transform = 'translateY(0)';
+        }, 100);
+    </script>
 </body>
 </html>
